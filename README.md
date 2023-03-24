@@ -1,4 +1,4 @@
-# -Project-_Chordparser-s
+# Project Chordparser-s
 [Project] Chordparser's
 Author: Narudon   songanusorn
 Tech Stack: Python [Create model]
