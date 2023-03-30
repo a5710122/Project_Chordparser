@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Test Chord Bb, Bdim, Dm, F
+/Python/Dataset/Test/Bb
+/Python/Dataset/Test/Bdim
+/Python/Dataset/Test/Dm
+/Python/Dataset/Test/F
+
+# Training Chord Bb, Bdim, Dm, F
+/Python/Dataset/Training/Bb
+/Python/Dataset/Training/Bdim
+/Python/Dataset/Training/Dm
+/Python/Dataset/Training/F

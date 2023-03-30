@@ -1,0 +1,51 @@
+ปัญหาระหว่างทำ Project
+1. Version ของ python และ tensorflow เนื่องจาก เราจำเป็นต้องใช้ tensorflow==2.8.0 และ tensorflow-io==0.25.0 หากใช้ version อื่นจะ error หา  tensorflow-io ไม่เจอ
+
+Python 3.9.14 (main, Dec 20 2022, 23:40:07) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+========== RESTART: E:\Project\Project_Chordparser\Python\app\main.py ==========
+Traceback (most recent call last):
+  File "E:\Project\Project_Chordparser\Python\app\main.py", line 7, in <module>
+    import tensorflow as tf
+  File "C:\Users\Narudon\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\__init__.py", line 37, in <module>
+    from tensorflow.python.tools import module_util as _module_util
+  File "C:\Users\Narudon\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\python\__init__.py", line 37, in <module>
+    from tensorflow.python.eager import context
+  File "C:\Users\Narudon\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\python\eager\context.py", line 29, in <module>
+    from tensorflow.core.framework import function_pb2
+  File "C:\Users\Narudon\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\core\framework\function_pb2.py", line 16, in <module>
+    from tensorflow.core.framework import attr_value_pb2 as tensorflow_dot_core_dot_framework_dot_attr__value__pb2
+  File "C:\Users\Narudon\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\core\framework\attr_value_pb2.py", line 16, in <module>
+    from tensorflow.core.framework import tensor_pb2 as tensorflow_dot_core_dot_framework_dot_tensor__pb2
+  File "C:\Users\Narudon\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\core\framework\tensor_pb2.py", line 16, in <module>
+    from tensorflow.core.framework import resource_handle_pb2 as tensorflow_dot_core_dot_framework_dot_resource__handle__pb2
+  File "C:\Users\Narudon\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\core\framework\resource_handle_pb2.py", line 16, in <module>
+    from tensorflow.core.framework import tensor_shape_pb2 as tensorflow_dot_core_dot_framework_dot_tensor__shape__pb2
+  File "C:\Users\Narudon\AppData\Local\Programs\Python\Python39\lib\site-packages\tensorflow\core\framework\tensor_shape_pb2.py", line 36, in <module>
+    _descriptor.FieldDescriptor(
+  File "C:\Users\Narudon\AppData\Local\Programs\Python\Python39\lib\site-packages\google\protobuf\descriptor.py", line 561, in __new__
+    _message.Message._CheckCalledFromGeneratedFile()
+TypeError: Descriptors cannot not be created directly.
+If this call came from a _pb2.py file, your generated code is out of date and must be regenerated with protoc >= 3.19.0.
+If you cannot immediately regenerate your protos, some other possible workarounds are:
+ 1. Downgrade the protobuf package to 3.20.x or lower.
+ 2. Set PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python (but this will use pure-Python parsing and will be much slower).
+
+More information: https://developers.google.com/protocol-buffers/docs/news/2022-05-06#python-updates
+>>> 
+========== RESTART: E:\Project\Project_Chordparser\Python\app\main.py ==========
+Chords: ['Am' 'Bb' 'Bdim' 'C' 'Dm' 'Em' 'F' 'G']
+Number of training examples: 1440
+Number of examples per label: 180
+Example file tensor: tf.Tensor(b'..\\Dataset\\Training\\G\\G_eletricguitar_Mari_1.wav', shape=(), dtype=string)
+Training set size 1152
+Validation set size 288
+Test set size 320
+WARNING:tensorflow:Using a while_loop for converting IO>AudioResample
+Label: G
+Waveform shape: (48855,)
+Spectrogram shape: (491, 257, 1)
+Audio playback
+<IPython.lib.display.Audio object>
+>>> 
