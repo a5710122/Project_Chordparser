@@ -74,3 +74,12 @@ def print_feature_stats(features: np.ndarray):
     print(f"Mean: {np.mean(features):.4f}")
     print(f"Std: {np.std(features):.4f}")
     print("ตัวอย่างค่า:", features[:5])
+
+def load_real_audio(file_path: str, target_length: int = 16000):
+    """โหลดเสียงจริงจากไฟล์และปรับความยาว"""
+    y, sr = librosa.load(file_path, sr=SAMPLE_RATE)
+    if len(y) < target_length:
+        y = np.pad(y, (0, target_length - len(y)))
+    else:
+        y = y[:target_length]
+    return y
