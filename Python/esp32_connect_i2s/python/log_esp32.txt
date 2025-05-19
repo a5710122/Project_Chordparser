@@ -1,0 +1,24 @@
+
+=== I2S Mic TCP Server ===
+
+Connecting to WiFi...
+..
+✅ Connected!
+📡 IP Address: 192.168.1.43
+🟢 Starting TCP server on port 9000
+✅ I2S Mic Initialized
+✅ Client connected
+Read bytes: 1024
+Sample[0]: 115
+Read bytes: 1024
+Sample[0]: 32
+Read bytes: 1024
+Sample[0]: 44
+Read bytes: 1024
+Sample[0]: 17
+Read bytes: 1024
+Sample[0]: -5
+❌ Client disconnected
+
+
+--------------------------------------------------------------------------------------------------------------------------------
